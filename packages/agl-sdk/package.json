@@ -1,0 +1,14 @@
+{
+  "name": "@meridian/agl-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test:anchor": "npx ts-node scripts/test-anchor.ts"
+  },
+  "dependencies": {
+    "xrpl": "^4.2.0"
+  }
+}
