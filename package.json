@@ -1,0 +1,29 @@
+{
+  "name": "meridian-dynamics",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Meridian Dynamics — AIOS Proof-of-Concept Demo Company. Real infrastructure, real lineage tracking, real governance.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PredictionMarketing/meridian.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=packages/dashboard",
+    "build": "npm run build --workspaces",
+    "db:migrate": "node packages/lineage/scripts/migrate.js",
+    "db:seed": "node packages/lineage/scripts/seed.js",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "eslint packages/*/src/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "eslint": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
