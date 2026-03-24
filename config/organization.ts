@@ -165,6 +165,18 @@ export const PERSONAS: Persona[] = [
     authMethod: 'sso_mfa',
     tools: ['onetrust', 'jira', 'slack'],
   },
+  {
+    id: 'jessica_torres',
+    name: 'Jessica Torres',
+    role: 'Legal Paralegal',
+    department: 'legal',
+    email: 'jessica.torres@meridiandynamics.dev',
+    authTier: 'bronze',
+    confidenceScore: 0.72,
+    device: 'Dell Latitude 5540',
+    authMethod: 'password_mfa',
+    tools: ['outlook', 'slack', 'sharepoint'],
+  },
 
   // ── Finance & Operations (28 total, 4 named) ──
   {
