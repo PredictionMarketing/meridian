@@ -8,7 +8,7 @@
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { createHash } from 'crypto';
-import type { AuthTier } from '../../config/organization';
+import type { AuthTier } from '../../../config/organization';
 
 // ── Types ──────────────────────────────────────────────────
 
@@ -167,9 +167,10 @@ export class LineageService {
     }
 
     // Increment reference count on from_node
-    await this.supabase.rpc('increment_reference_count', { 
-      node_id: edge.from_node_id 
-    }).catch(() => {}); // Non-critical
+    // Non-critical — fire and forget, ignore errors
+    void this.supabase.rpc('increment_reference_count', {
+      node_id: edge.from_node_id,
+    }).then(() => {}, () => {});
 
     return data;
   }
